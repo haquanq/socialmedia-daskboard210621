@@ -1,0 +1,26 @@
+$Lime_Green: hsl(163, 72%, 41%);
+$Bright_Red: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$YouTube: hsl(348, 97%, 39%);
+
+$ToggleDark: linear-gradient(90deg, hsl(210, 78%, 56%), rgb(62, 218, 130));
+$ToggleLight: hsl(230, 22%, 74%);
+
+$DarkTheme: (
+  V_D_Blue_BG: hsl(230, 17%, 14%),
+  V_D_Blue_TopBGPattern: hsl(232, 19%, 15%),
+  D_Desaturated_Blue_CardBG: hsl(228, 28%, 20%),
+  Desaturated_Blue_Text: hsl(228, 34%, 66%),
+  White_Text: hsl(0, 0%, 100%),
+);
+
+$LightTheme: (
+  White_BG: hsl(0, 0%, 100%),
+  V_Pale_Blue_TopBGParttern: hsl(225, 100%, 98%),
+  L_Grayish_Blue_CardBg: hsl(227, 47%, 96%),
+  D_Grayish_Blue_Text: hsl(228, 12%, 44%),
+  V_D_Blue_Text: hsl(230, 17%, 14%),
+);

@@ -1,0 +1,113 @@
+@import "./variable";
+
+.main {
+  margin: 45px 0 0 0;
+  width: 100%;
+  h2 {
+    transition: 300ms ease;
+    font-size: 1.5em;
+    color: map-get($DarkTheme, White_Text);
+  }
+}
+
+.main.light {
+  h2 {
+    color: map-get($LightTheme, V_D_Blue_Text);
+  }
+  .card_container {
+    background: map-get($LightTheme, L_Grayish_Blue_CardBg);
+    > div:first-child {
+      p {
+        color: map-get($LightTheme, D_Grayish_Blue_Text);
+      }
+    }
+    > div:last-child {
+      > p {
+        color: map-get($LightTheme, V_D_Blue_Text);
+      }
+    }
+  }
+}
+
+.main__card__container {
+  margin: 25px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 24px 30px;
+}
+
+.card_container:nth-child(7),
+.card_container:nth-child(8),
+.card_container:nth-child(2) {
+  > div:last-child {
+    div p {
+      color: $Bright_Red;
+    }
+  }
+}
+
+.card_container {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  border-radius: 5px;
+  background: map-get($DarkTheme, D_Desaturated_Blue_CardBG);
+  height: 125px;
+  transition: 300ms ease;
+
+  > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      font-weight: 700;
+      font-size: 0.875em;
+      color: map-get($DarkTheme, Desaturated_Blue_Text);
+      transition: 300ms ease;
+    }
+  }
+  > div:last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    > p {
+      line-height: 1;
+      font-size: 1.75em;
+      font-weight: 700;
+      color: map-get($DarkTheme, White_Text);
+      transition: 300ms ease;
+    }
+    > div {
+      display: flex;
+      img {
+        width: 8px;
+        margin-right: 4px;
+        object-fit: contain;
+      }
+      p {
+        font-weight: 700;
+        font-size: 0.75em;
+        color: $Lime_Green;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .main {
+    .card_container:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      background: lighten(map-get($DarkTheme, D_Desaturated_Blue_CardBG), 5);
+    }
+  }
+  .main.light {
+    .card_container:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      background: darken(map-get($LightTheme, L_Grayish_Blue_CardBg), 3);
+    }
+  }
+}

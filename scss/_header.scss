@@ -1,0 +1,226 @@
+@import "./variable";
+
+.head__headings {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > div:first-child {
+    h1 {
+      color: map-get($DarkTheme, White_Text);
+      transition: 300ms ease;
+
+      font-size: 1.75em;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 0.875em;
+      font-weight: 700;
+      color: map-get($DarkTheme, Desaturated_Blue_Text);
+      transition: 300ms ease;
+    }
+  }
+  > div:last-child {
+    display: flex;
+    align-items: center;
+    p {
+      color: map-get($DarkTheme, White_Text);
+      transition: 300ms ease;
+      font-size: 0.875em;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    label {
+      box-shadow: inset rgba(0, 0, 0, 0.24) 0px 0px 10px 2px;
+      margin-left: 14px;
+      cursor: pointer;
+      display: block;
+      border-radius: 50px;
+      background: $ToggleDark;
+      width: 49px;
+      height: 24px;
+      color: map-get($DarkTheme, White_Text);
+      transition: 300ms ease;
+      display: flex;
+      align-items: center;
+      input {
+        display: none;
+      }
+      input:checked ~ span {
+        margin-left: 27px;
+      }
+      span {
+        transition: 250ms ease-in-out;
+        border-radius: 100%;
+        margin-left: 3px;
+        background: map-get($DarkTheme, D_Desaturated_Blue_CardBG);
+        transition: 300ms ease;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+
+.head__body {
+  margin-top: 45px;
+  width: 100%;
+  display: grid;
+  grid-gap: 24px 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.head__body__card:nth-child(1) {
+  span {
+    background: $Facebook;
+  }
+}
+
+.head__body__card:nth-child(2) {
+  span {
+    background: $Twitter;
+  }
+}
+
+.head__body__card:nth-child(3) {
+  span {
+    background: $Instagram;
+  }
+}
+
+.head__body__card:nth-child(4) {
+  span {
+    background: $YouTube;
+  }
+  > div:nth-child(4) {
+    p {
+      color: $Bright_Red;
+    }
+  }
+}
+
+.head__body__card {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  padding: 31px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 215px;
+  background: map-get($DarkTheme, D_Desaturated_Blue_CardBG);
+  transition: 300ms ease;
+  span {
+    top: 0;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+  }
+  > div:nth-child(2) {
+    display: flex;
+    p {
+      margin-top: 2px;
+      font-weight: 700;
+      font-size: 0.8125em;
+      color: map-get($DarkTheme, Desaturated_Blue_Text);
+      transition: 300ms ease;
+    }
+    img {
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+  > div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    > p:first-child {
+      font-size: 3.5em;
+      font-weight: 700;
+      color: map-get($DarkTheme, White_Text);
+      transition: 300ms ease;
+    }
+    > p:last-child {
+      margin-top: -5px;
+      font-weight: 400;
+      font-size: 0.8125em;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: map-get($DarkTheme, Desaturated_Blue_Text);
+      transition: 300ms ease;
+    }
+  }
+  > div:nth-child(4) {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 4px;
+    }
+    p {
+      font-weight: 700;
+      font-size: 0.75em;
+      color: $Lime_Green;
+    }
+  }
+}
+
+.head.light {
+  .head__headings {
+    > div:first-child {
+      h1 {
+        color: map-get($LightTheme, V_D_Blue_Text);
+      }
+      p {
+        color: map-get($LightTheme, D_Grayish_Blue_Text);
+      }
+    }
+    > div:last-child {
+      p {
+        color: map-get($LightTheme, D_Grayish_Blue_Text);
+      }
+      label {
+        background: $ToggleLight;
+        span {
+          background: map-get($LightTheme, White_BG);
+        }
+      }
+    }
+  }
+  .head__body__card {
+    background: map-get($LightTheme, L_Grayish_Blue_CardBg);
+    > div:nth-child(2) {
+      p {
+        color: map-get($LightTheme, D_Grayish_Blue_Text);
+      }
+    }
+    > div:nth-child(3) {
+      > p:first-child {
+        color: map-get($LightTheme, V_D_Blue_Text);
+      }
+      > p:last-child {
+        color: map-get($LightTheme, D_Grayish_Blue_Text);
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  .head {
+    .head__body__card:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      background: lighten(map-get($DarkTheme, D_Desaturated_Blue_CardBG), 5);
+    }
+  }
+  .head.light {
+    .head__body__card:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+      background: darken(map-get($LightTheme, L_Grayish_Blue_CardBg), 3);
+    }
+  }
+}
