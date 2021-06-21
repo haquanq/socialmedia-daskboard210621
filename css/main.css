@@ -38,7 +38,7 @@
 }
 
 .head__headings > div:last-child p {
-  color: white;
+  color: #8b97c6;
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
   font-size: 0.875em;

@@ -24,7 +24,7 @@
     display: flex;
     align-items: center;
     p {
-      color: map-get($DarkTheme, White_Text);
+      color: map-get($DarkTheme, Desaturated_Blue_Text);
       transition: 300ms ease;
       font-size: 0.875em;
       font-weight: 700;
